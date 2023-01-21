@@ -1,0 +1,44 @@
+<form [formGroup]="myform" (ngSubmit)="savePermis()">
+
+    <!-- Grid -->
+    <div class="grid">
+
+      <label for="dateEmission">
+        Date d'émission
+        <input type="date" id="dateEmission" name="dateEmission" formControlName="dateEmission">
+      </label>
+
+      <label for="dateExpiration">
+        Date d'Expriration
+        <input type="date" id="dateExpiration" name="dateExpiration" formControlName="dateExpiration">
+      </label>
+  
+    </div>
+
+    <div class="grid">
+  
+        <label for="points">
+            Points
+          <input type="number" id="points" name="points" formControlName="points" >
+        </label>
+    
+        <!-- Select -->
+        <label for="conducteur">Conducteur
+        <select formControlName="conducteur" (change)="selectChangeHandler($event)">
+        <option value="" selected>Choisir un conducteur</option>
+        <option *ngFor="let u of conducteurs; index as i" value="{{u.id}}">{{u.id + ' | '}}{{u.nom | uppercase}} {{" " +u.prenom}} </option>
+        </select>
+      </label>
+
+        <label for="type">Type
+        <select formControlName="type">
+        <option value="" selected>Type de permis</option>
+        <option *ngFor="let type of types | keyvalue" [ngValue]="type.value">{{type.value}} </option>
+        </select>
+      </label>
+      </div>
+  
+    <!-- Button -->
+    <button [disabled]="myform.invalid" type="submit">Submit</button>
+  
+  </form>

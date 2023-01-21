@@ -1,0 +1,29 @@
+<table>
+    <tbody>
+      <tr>
+        <td><b>Id Contravention</b></td>
+        <td>{{contravention.id}}</td>
+          </tr>
+      <tr>
+        <td><b>Numero de Permis</b></td>
+        <td>{{contravention.permis.id}}</td>
+      </tr>
+      <tr>
+        <td><b>Conducteur ID</b></td>
+        <td>{{contravention.permis.conducteur.id}}</td>
+      </tr>
+      <tr>
+        <td><b>Points Retirés</b></td>
+        <td>{{contravention.retaitPoints}}</td>
+      </tr>
+      <tr>
+        <td><b>Motif</b></td>
+        <td>{{contravention.motif}}</td>
+      </tr>
+      <tr>
+        <td><b>Date Infraction</b></td>
+        <td>{{contravention.date | date:'EEEE, MMMM d, y'}}</td>
+      </tr>
+      
+    </tbody>
+    </table>

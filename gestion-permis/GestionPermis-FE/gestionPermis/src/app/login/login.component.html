@@ -1,0 +1,18 @@
+<div class="centerDiv">
+<form [formGroup]="form" (ngSubmit)="onLogin()">
+
+  <!-- Grid -->
+  <div >
+    <label for="username">Username</label>
+      <input class="bottomSize" type="text" id="username" name="username"  formControlName="username">
+  </div>
+
+  <div>
+    <label for="Password">Password</label>
+      <input class="bottomSize" type="password" id="passwd" name="passwd" formControlName="passwd">
+  </div>
+
+  <!-- Button -->
+  <button class="bottomSize"  type="submit">Submit</button>
+
+</form></div>

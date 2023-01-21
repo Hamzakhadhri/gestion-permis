@@ -1,0 +1,11 @@
+<nav>
+    <ul>
+      <li><strong>AGATE IT</strong></li>
+    </ul>
+    <ul>
+      <li><a href="allConducteur">Conducteur</a></li>
+      <li><a href="allPermis">Permis</a></li>
+      <li><a href="allContravention">Contravention</a></li>
+      <li *ngIf="this.logged"> <button (click)="logout()">logOut</button></li>
+    </ul>
+  </nav>

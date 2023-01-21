@@ -1,0 +1,36 @@
+<h3>Conducteur ID : {{currentConducteur.id}}</h3>
+
+<form [formGroup]="myform" (ngSubmit)="OnupdateConducteur()">
+
+    <!-- Grid -->
+    <div class="grid">
+    
+      <label for="nom">
+        Nom
+        <input type="text" id="nom" name="nom" [(ngModel)]="currentConducteur.nom" formControlName="nom">
+      </label>
+  
+    </div>
+
+    <div class="grid">
+  
+        <label for="prenom">
+          Prénom
+          <input type="text" id="prenom" name="prenom" [(ngModel)]="currentConducteur.prenom" formControlName="prenom">
+        </label>
+    
+        <label for="dateNaissance">
+          Date de Naissance
+          <input type="date" id="dateNaissance" name="dateNaissance" formControlName="dateNaissance" [(ngModel)]="date">
+        </label>
+    
+      </div>
+  
+    <!-- Markup example 2: input is after label -->
+    <label for="adresse">Adresse
+    <input type="text" id="adresse" name="adresse" [(ngModel)]="currentConducteur.adresse" formControlName="adresse">
+  </label>
+    <!-- Button -->
+    <button [disabled]="myform.invalid" type="submit">Submit</button>
+  
+  </form>

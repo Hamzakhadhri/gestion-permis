@@ -1,0 +1,39 @@
+<body>
+    <div style="display: flex;
+    justify-content: center;
+    align-items: center;">
+    <a href="/addContravention" role="button" class="outline">Ajouter Contravention</a>
+    </div>
+    <br>
+    <div>
+    <table role="grid">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Id Contravention</th>
+            <th scope="col">Numero Permis</th>
+            <th scope="col">Id Conducteur</th>
+            <th scope="col">Points Retirés</th>
+            <th scope="col">Motif</th>
+            <th scope="col">Date infraction</th>
+            <th scope="col">Actions</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let u of contravention; index as i">
+            <th scope="row">{{i}}</th>
+            <td>{{u.id}}</td>
+            <td>{{u.permis.id}}</td>
+            <td>{{u.permis.conducteur.id}} | {{u.permis.conducteur.nom | uppercase}} {{u.permis.conducteur.prenom}} </td>
+            <td>{{u.retaitPoints}}</td>
+            <td>{{u.motif}}</td>
+            <td>{{u.date | date:'EEEE, MMMM d, y'}}</td>
+
+            <td> <button (click)="detail(u)" class="secondary">Details</button> <button (click)="edit(u)">Edit</button> <button class="contrast" (click)="delete(u)">Delete</button></td>
+          </tr>
+        </tbody>
+        </table>
+        </div>
+    </body>
+    

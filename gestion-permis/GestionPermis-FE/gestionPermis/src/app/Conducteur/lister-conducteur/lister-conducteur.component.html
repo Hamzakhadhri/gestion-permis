@@ -1,0 +1,45 @@
+<body>
+<div style="display: flex;
+justify-content: center;
+align-items: center;">
+<a href="/addConducteur" role="button" class="outline">Ajouter conducteur</a>
+</div>
+<br>
+
+<div>
+<table role="grid">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Id Conducteur</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">Date de Naissance</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="(response$ | async) as response">
+      <ng-container *ngIf="response.status==2">
+        <tr  *ngFor="let u of response.data.conducteurs; index as i">
+          <th scope="row">{{i}}</th>
+          <td>{{u.id}}</td>
+          <td>{{u.nom}}</td>
+          <td>{{u.prenom}}</td>
+          <td>{{u.adresse}}</td>
+          <td>{{u.dateNaissance | date:'EEEE, MMMM d, y'}}</td>
+          <td> <button (click)="detail(u)" class="secondary">Details</button> <button (click)="edit(u)">Edit</button> <button class="contrast" (click)="delete(u)">Delete</button></td>
+        </tr>
+      </ng-container>
+
+      <ng-container *ngIf="response.status==1">
+
+        <p>Chargement en cours</p>
+        
+      </ng-container>
+
+      
+    </tbody>
+    </table>
+    </div>
+</body>

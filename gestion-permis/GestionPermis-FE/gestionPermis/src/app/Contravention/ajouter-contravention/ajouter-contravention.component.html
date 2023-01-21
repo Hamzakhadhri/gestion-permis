@@ -1,0 +1,37 @@
+<form [formGroup]="myform" (ngSubmit)="saveContravention()">
+
+    <!-- Grid -->
+    <div class="grid">
+      <label for="motif">
+        Motif
+        <input type="text" id="motif" name="motif" formControlName="motif">
+      </label>
+
+      <label for="retaitPoints">
+        Points retirés
+        <input type="number" id="retaitPoints" name="retaitPoints" formControlName="retaitPoints">
+      </label>
+  
+    </div>
+
+    <div class="grid">
+  
+        <label for="date">
+            Date Infraction
+          <input type="date" id="date" name="date" formControlName="date" >
+        </label>
+    
+        <!-- Select -->
+        <label for="permis">Permis
+        <select formControlName="permis" (change)="selectChangeHandler($event)">
+        <option value="" selected>Choisir un Permis</option>
+        <option *ngFor="let u of permis; index as i" value="{{u.id}}"> {{u.id + ' | '}}{{u.conducteur.nom | uppercase}} {{u.conducteur.prenom}} </option>
+        </select>
+      </label>
+
+      </div>
+  
+    <!-- Button -->
+    <button [disabled]="myform.invalid" type="submit">Submit</button>
+  
+  </form>

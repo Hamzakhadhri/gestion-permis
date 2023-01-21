@@ -1,0 +1,44 @@
+<table>
+    <tbody>
+      <tr>
+        <td><b>Numero de Permis</b></td>
+        <td>{{currentPermis.id}}</td>
+      </tr>
+      <tr>
+        <td><b>Date d'emission</b></td>
+        <td>{{currentPermis.dateEmission | date:'EEEE, MMMM d, y'}}</td>
+      </tr>
+      <tr>
+        <td><b>Date d'expiration</b></td>
+        <td>{{currentPermis.dateExpiration | date:'EEEE, MMMM d, y'}}</td>
+      </tr>
+      <tr>
+        <td><b>Type de Permis</b></td>
+        <td>{{currentPermis.type}}</td>
+      </tr>
+      <tr>
+        <td><b>Points</b></td>
+        <td>{{currentPermis.points}}</td>
+      </tr>
+      <tr>
+        <td><b>Conducteur ID</b></td>
+        <td>{{currentPermis.conducteur.id}}</td>
+      </tr>
+      <tr>
+        <td><b>Nom</b></td>
+        <td>{{currentPermis.conducteur.nom}}</td>
+      </tr>
+      <tr>
+        <td><b>Prénom</b></td>
+        <td>{{currentPermis.conducteur.prenom}}</td>
+      </tr>
+      <tr>
+        <td><b>Adresse</b></td>
+        <td>{{currentPermis.conducteur.adresse}}</td>
+      </tr>
+      <tr>
+        <td><b>Date de Naissance</b></td>
+        <td>{{currentPermis.conducteur.dateNaissance | date:'EEEE, MMMM d, y'}}</td>
+      </tr>
+    </tbody>
+    </table>
